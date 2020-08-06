@@ -92,8 +92,8 @@ for i in groups:
 
 layouts = [
     layout.MonadTall(border_focus='8b0000', border_width=4),
-    layout.Max(),
-    layout.Stack(num_stacks=3),
+    #layout.Stack(num_stacks=3),
+    #layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Bsp(),
     # layout.Columns(),
@@ -117,6 +117,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                #widget.CurrentLayout(),
 	    	    widget.GroupBox(),
 		        widget.WindowName(),
             ],
@@ -126,7 +127,7 @@ screens = [
     Screen(
 	    top=bar.Bar(
 	        [
-                widget.CurrentLayout(),
+                #widget.CurrentLayout(),
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -141,6 +142,7 @@ screens = [
     Screen(
 	    top=bar.Bar(
 	        [
+                #widget.CurrentLayout(),
 	        	widget.GroupBox(),
 	    	    widget.WindowName(),
 	        ],
