@@ -48,8 +48,8 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
-editor = os.getenv("EDITOR") or "code"
+terminal = "termite"
+editor = os.getenv("EDITOR") or "emacs"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -579,6 +579,10 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- Gaps
+beautiful.useless_gap =	5
+
 -- Autostart Applications
-awful.spawn.with_shell("compton")
+awful.spawn.with_shell("picom")
+awful.spawn.with_shell("xrandr --output eDP1 --mode 1920x1080")
 awful.spawn.with_shell("nitrogen --restore")
