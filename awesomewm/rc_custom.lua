@@ -362,7 +362,17 @@ globalkeys = gears.table.join(
     	      {description = 'delete tag', group = 'tag'}),
 
     -- Standard program
-
+    awful.key({ modkey,		  }, 'Return', function () awful.spawn(terminal) end,
+    	      {description = 'open a terminal', group = launcher},
+    awful.key({ modkey, CTRL	  }, 'r', awesome.restart,
+    	      {desctiption = 'reload awesome', group = 'awesome'}),
+    awful.key({ modkey, 'Shift'	  }, 'q', awesome.quit,
+    	      {description = 'quit awesome', group = 'awesome'}),
+    awful,key({ modkey, 'Shift'	  }, 'l', function () awful.tag.incmwfact(0.05) end,
+              {description = 'increase master with factor', group = 'layout'}),
+    awful.key({ modkey, 'Shift'	  }, 'h', function () awful.tag.incmwfact(-0.05) end,
+    	      {description = 'descrease master width factor', group = 'layout'}),
+    awful.key({ modkey, 'Shift'	  }, '
 
 
 
