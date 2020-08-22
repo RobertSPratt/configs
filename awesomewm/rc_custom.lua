@@ -368,11 +368,39 @@ globalkeys = gears.table.join(
     	      {desctiption = 'reload awesome', group = 'awesome'}),
     awful.key({ modkey, 'Shift'	  }, 'q', awesome.quit,
     	      {description = 'quit awesome', group = 'awesome'}),
-    awful,key({ modkey, 'Shift'	  }, 'l', function () awful.tag.incmwfact(0.05) end,
+    awful,key({ modkey, 'Shift'	  }, 'l', function() awful.tag.incmwfact(0.05) end,
               {description = 'increase master with factor', group = 'layout'}),
-    awful.key({ modkey, 'Shift'	  }, 'h', function () awful.tag.incmwfact(-0.05) end,
+    awful.key({ modkey, 'Shift'	  }, 'h', function() awful.tag.incmwfact(-0.05) end,
     	      {description = 'descrease master width factor', group = 'layout'}),
-    awful.key({ modkey, 'Shift'	  }, '
+    awful.key({ modkey, 'Shift'	  }, 'h', function() awful.tag.incnmaster(1, nil, true) end,
+    	      {description = 'increase the number of master clients', group = 'layout'}),
+    awful.key({ modkey, 'Shift'	  }, 'l', function() awful.tag.incnmaster(-1, nil, true) end,
+    	      {description = 'decrease the number of master clients', group = 'layout'}),
+    awful.key({ modkey, CTRL	  }, 'h', function() awful.tag.incncol(1, nil, true) end,
+    	      {description = 'increase the number of columns', group = 'layout'}),
+    awful.key({ modkey, CTRL	  }, 'l', function() awful.tag.incncol(-1, nil, true) end,
+    	      {description = 'decrease the number of columns', group = 'layout'}),
+    awful.key({ modkey,		  }, 'Space', function() awful.layout.inc(1) end,
+    	      {description = 'select next', group = 'layout'}),
+    awful.key({ modkey,		  }, 'Space', function() awful.layout.inc(-1) end,
+	      {description = 'select previous', group = 'layout'}),
+    awful.key({ modkey, CTRL	  }, 'n',
+        function()
+	    local c = awful.client.restore()
+	    -- Focus restored client
+	    if c then
+		client.focus = c
+		c:raise()
+	    end
+	end,
+	{description = 'restore minimized', group = 'client'}),
+
+    -- Dropdown application
+    awful.key({ modkey,		  }, 'z', function() if beautiful.cal then beautiful.cal.show(7) end end,
+    	      {description = 'dropdown application', group = launcher
+   
+    -- Widget popups
+    awful.key({ ALT,		  }, 'c', function() if beautiful.cal then beautiful.cal.show
 
 
 
